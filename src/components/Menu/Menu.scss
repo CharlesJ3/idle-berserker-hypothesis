@@ -1,0 +1,28 @@
+.mainMenu {
+  display: flex;
+  text-align: center;
+  margin: 0 auto;
+  justify-content: center;
+  position: absolute;
+  width: 99%;
+  top: 0;
+
+  section {
+    width: 22%;
+    border: 1px solid white;
+    padding: 32px;
+    color: white;
+    font-size: 1.7rem;
+    background-color: #156135;
+  }
+}
+
+.mainMenuBackground {
+  border: 1px solid red;
+  width: 100%;
+  padding-top: 5%;
+  background-color: #253eac;
+  z-index: 5;
+  position: absolute;
+  left: 0px;
+}
