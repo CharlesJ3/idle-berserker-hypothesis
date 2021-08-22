@@ -1,11 +1,13 @@
 .mainMenu {
-  display: flex;
-  text-align: center;
-  margin: 0 auto;
-  justify-content: center;
-  position: absolute;
-  width: 99%;
-  top: 0;
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+    justify-content: center;
+    position: absolute;
+    width: 97%;
+    top: 2%;
+    left: 1.5%;
+    cursor: pointer;
 
   section {
     width: 22%;
@@ -19,7 +21,7 @@
 
 .mainMenuBackground {
   border: 1px solid red;
-  width: 100%;
+  width: 98%;
   padding-top: 5%;
   background-color: #253eac;
   z-index: 5;
