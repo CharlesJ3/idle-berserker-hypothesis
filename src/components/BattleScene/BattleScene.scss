@@ -1,3 +1,15 @@
+@keyframes backgroundSlide {
+  0% {
+    background-position-y: 0;
+  }
+  40% {
+    background-position-y: -100px;
+  }
+  60% {
+    background-position-y: 100px;
+  }
+}
+
 .battleScene {
   position: absolute;
   top: -10%;
@@ -12,5 +24,8 @@
     position: absolute;
     top: 150px;
     left: 0;
+    background: url('../../images/m51_1_darkest.jpg') no-repeat center center;
+    background-size: cover;
+    animation: backgroundSlide 180s linear infinite;
   }
 }

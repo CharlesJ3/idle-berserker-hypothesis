@@ -1,13 +1,13 @@
 .mainMenu {
-    display: flex;
-    text-align: center;
-    margin: 0 auto;
-    justify-content: center;
-    position: absolute;
-    width: 97%;
-    top: 2%;
-    left: 1.5%;
-    cursor: pointer;
+  display: flex;
+  text-align: center;
+  margin: 0 auto;
+  justify-content: center;
+  position: absolute;
+  width: 97%;
+  top: 2%;
+  left: 1.5%;
+  cursor: pointer;
 
   section {
     width: 22%;
@@ -27,4 +27,38 @@
   z-index: 5;
   position: absolute;
   left: 0px;
+}
+
+.menuSection {
+  width: 43vw;
+  height: 80vh;
+  position: absolute;
+  right: 0;
+  top: 166px;
+}
+
+.menuOne,
+.menuTwo,
+.menuThree,
+.menuFour {
+  background-color: white;
+
+  .innerSection {
+  }
+}
+
+.menuOne {
+  border: 2px solid red;
+}
+
+.menuTwo {
+  border: 2px solid blue;
+}
+
+.menuThree {
+  border: 2px solid green;
+}
+
+.menuFour {
+  border: 2px solid tan;
 }
