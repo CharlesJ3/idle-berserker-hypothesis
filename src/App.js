@@ -1,14 +1,14 @@
-import './App.css';
-import Menu from './components/Menu/Menu';
-import BattleScene from './components/BattleScene/BattleScene';
+import React from 'react';
+import Menu from '../src/components/Menu/Menu';
+import BattleSCene from './components/BattleScene/BattleScene';
 
-function App() {
+const App = () => {
   return (
-    <div className='App'>
+    <div>
       <Menu />
-      <BattleScene />
+      <BattleSCene />
     </div>
   );
-}
+};
 
 export default App;

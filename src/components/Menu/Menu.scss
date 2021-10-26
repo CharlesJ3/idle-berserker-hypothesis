@@ -1,13 +1,22 @@
+$main-1: rgba(74, 156, 191, .50);
+$main-2: rgba(87, 150, 158, .50);
+$main-3: rgba(17, 32, 44, .50);
+$main-4: rgba(56, 0, 54, .50);
+$border-1: rgba(205, 83, 52, 1);
+$border-2: rgba(99, 248, 206, 1);
+$border-3: rgba(168, 51, 185, 1);
+$border-4: rgba(10, 243, 255, 1);
+
 .mainMenu {
-  display: flex;
-  text-align: center;
-  margin: 0 auto;
-  justify-content: center;
-  position: absolute;
-  width: 97%;
-  top: 2%;
-  left: 1.5%;
-  cursor: pointer;
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+    justify-content: center;
+    position: absolute;
+    width: 97%;
+    top: 2%;
+    left: 1.5%;
+    cursor: pointer;
 
   section {
     width: 22%;
@@ -29,36 +38,34 @@
   left: 0px;
 }
 
-.menuSection {
-  width: 43vw;
-  height: 80vh;
+.menu {
   position: absolute;
-  right: 0;
-  top: 166px;
-}
+  margin-right: auto;
+  top: 10%;
 
-.menuOne,
-.menuTwo,
-.menuThree,
-.menuFour {
-  background-color: white;
-
-  .innerSection {
+  &__one, &__two, &__three, &__four {
+    width: 98vw;
+    height: 80vh;
+    display: none;
   }
-}
 
-.menuOne {
-  border: 2px solid red;
-}
+  &__one {
+    border: 1px solid $border-1;
+    background-color: $main-1;
+  }
 
-.menuTwo {
-  border: 2px solid blue;
-}
+  &__two {
+    border: 1px solid $border-2;
+    background-color: $main-2;
+  }
 
-.menuThree {
-  border: 2px solid green;
-}
+  &__three {
+    border: 1px solid $border-3;
+    background-color: $main-3;
+  }
 
-.menuFour {
-  border: 2px solid tan;
+  &__four {
+    border: 1px solid $border-4;
+    background-color: $main-4;
+  }
 }

@@ -1,90 +1,96 @@
 import React from 'react';
-import { useEffect, useRef, useState } from 'react';
 import './Menu.scss';
 
-const Menu = (props) => {
-  const [menu, menuChange] = useState({
-    currentMenu: 0,
-    menuOpen: false,
-  });
+const Menu = ({ toggleChecked, cameraPan }) => {
 
-  const updateMenu = (menuItem) => {
-    let currentMenu = menu.currentMenu;
+  const menuSwitch = ( menu ) => {
+    switch (menu) {
+      case 1:
+        // If menu clicked is not open, open that menu
+        if(document.querySelector('.menu__one').style.display !== 'inherit') {
+          document.querySelector('.menu__one').style.display = 'inherit';
+          document.querySelector('.menu__two').style.display = 'none';
+          document.querySelector('.menu__three').style.display = 'none';
+          document.querySelector('.menu__four').style.display = 'none';
+        } else {
+          document.querySelector('.menu__one').style.display = 'none';
+          document.querySelector('.menu__two').style.display = 'none';
+          document.querySelector('.menu__three').style.display = 'none';
+          document.querySelector('.menu__four').style.display = 'none';
+        }
 
-    menuChange(() => ({
-      currentMenu: menuItem,
-      menuOpen: !menu.menuOpen,
-    }));
-
-    console.log(menu.currentMenu);
-    console.log(currentMenu);
-  };
+        toggleChecked();
+      break;
+      case 2:
+        if(document.querySelector('.menu__two').style.display !== 'inherit') {
+          document.querySelector('.menu__one').style.display = 'none';
+          document.querySelector('.menu__two').style.display = 'inherit';
+          document.querySelector('.menu__three').style.display = 'none';
+          document.querySelector('.menu__four').style.display = 'none';
+        } else {
+          document.querySelector('.menu__one').style.display = 'none';
+          document.querySelector('.menu__two').style.display = 'none';
+          document.querySelector('.menu__three').style.display = 'none';
+          document.querySelector('.menu__four').style.display = 'none';
+        }
+      break;
+      case 3:
+        if(document.querySelector('.menu__three').style.display !== 'inherit') {
+          document.querySelector('.menu__one').style.display = 'none';
+          document.querySelector('.menu__two').style.display = 'none';
+          document.querySelector('.menu__three').style.display = 'inherit';
+          document.querySelector('.menu__four').style.display = 'none';
+        } else {
+          document.querySelector('.menu__one').style.display = 'none';
+          document.querySelector('.menu__two').style.display = 'none';
+          document.querySelector('.menu__three').style.display = 'none';
+          document.querySelector('.menu__four').style.display = 'none';
+        }
+      break;
+      case 4:
+        if(document.querySelector('.menu__four').style.display !== 'inherit') {
+          document.querySelector('.menu__one').style.display = 'none';
+          document.querySelector('.menu__two').style.display = 'none';
+          document.querySelector('.menu__three').style.display = 'none';
+          document.querySelector('.menu__four').style.display = 'inherit';
+        } else {
+          document.querySelector('.menu__one').style.display = 'none';
+          document.querySelector('.menu__two').style.display = 'none';
+          document.querySelector('.menu__three').style.display = 'none';
+          document.querySelector('.menu__four').style.display = 'none';
+        }
+      break;
+      default:
+        break;
+    }
+  }
 
   return (
-    <div className='mainMenuBackground'>
-      <div className='mainMenu'>
-        <section onClick={() => updateMenu(1)}>
-          <h3>BATTLE</h3>
-        </section>
+    <div>
+      <div className="mainMenuBackground">
+        <div className="mainMenu">
+          <section onClick={() => menuSwitch(1)}>BATTLE</section>
+          <section onClick={() => menuSwitch(2)}>BASE</section>
+          <section onClick={() => menuSwitch(3)}>SHIPS</section>
+          <section onClick={() => menuSwitch(4)}>PRESTIGE</section>
+        </div>
+      </div>
+      <div className='menu'>
+        <div className='menu__one'>
 
-        {/* If Menu is set to this section and menu is set to be opened, open it */}
-        {menu.currentMenu === 1 && menu.menuOpen === true ? (
-          <div className='menuSection menuOne'>
-            <div className='innerSection description'>
-              Description of Battle Here
-            </div>
-          </div>
-        ) : (
-          ''
-        )}
+        </div>
+        <div className='menu__two'>
 
-        <section onClick={() => updateMenu(2)}>
-          <h3>BASE</h3>
-        </section>
+        </div>
+        <div className='menu__three'>
 
-        {/* If Menu is set to this section and menu is set to be opened, open it */}
-        {menu.currentMenu === 2 && menu.menuOpen === true ? (
-          <div className='menuSection menuTwo'>
-            {' '}
-            <div className='innerSection description'>
-              Description of Base Here
-            </div>
-          </div>
-        ) : (
-          ''
-        )}
-        <section onClick={() => updateMenu(3)}>
-          <h3>SHIPS</h3>
-        </section>
+        </div>
+        <div className='menu__four'>
 
-        {/* If Menu is set to this section and menu is set to be opened, open it */}
-        {menu.currentMenu === 3 && menu.menuOpen === true ? (
-          <div className='menuSection menuThree'>
-            {' '}
-            <div className='innerSection description'>
-              Description of Ships Here
-            </div>
-          </div>
-        ) : (
-          ''
-        )}
-        <section onClick={() => updateMenu(4)}>
-          <h3>PRESTIGE</h3>
-        </section>
-        {/* If Menu is set to this section and menu is set to be opened, open it */}
-        {menu.currentMenu === 4 && menu.menuOpen === true ? (
-          <div className='menuSection menuFour'>
-            {' '}
-            <div className='innerSection description'>
-              Description of Prestige Here
-            </div>
-          </div>
-        ) : (
-          ''
-        )}
+        </div>
       </div>
     </div>
   );
-};
+}
 
 export default Menu;
